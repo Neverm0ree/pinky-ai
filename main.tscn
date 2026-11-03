@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dt33g0hykgoox"]
+
+[ext_resource type="Script" uid="uid://dqnevutyamng1" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://yu6o2p5eot82" path="res://avatar.glb" id="2_0xm2m"]
+
+[sub_resource type="Environment" id="Environment_swon5"]
+background_mode = 1
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Main" type="Control" unique_id=2073733680]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ig7tw")
+
+[node name="AvatarScene" type="Node3D" parent="." unique_id=677639823]
+
+[node name="Camera3D" type="Camera3D" parent="AvatarScene" unique_id=1671903577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 1.35, 0.61008334)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="AvatarScene" unique_id=400438241]
+transform = Transform3D(0.90630776, -0.24240388, 0.34618863, 0, 0.81915206, 0.57357645, -0.42261827, -0.5198368, 0.74240386, 0, 0, 0)
+light_energy = 0.208
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="AvatarScene" unique_id=416598647]
+environment = SubResource("Environment_swon5")
+
+[node name="avatar" parent="AvatarScene" unique_id=1350642613 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(0.9099482, 0, -0.41472185, 0, 1, 0, 0.41472185, 0, 0.9099482, 0.14722776, 0, 0.6622729)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=461907410]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChatHistory" type="RichTextLabel" parent="VBoxContainer" unique_id=131770763]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1369317324]
+layout_mode = 2
+
+[node name="MessageInput" type="LineEdit" parent="VBoxContainer/HBoxContainer" unique_id=229817695]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+offset_transform_enabled = true
+placeholder_text = "Введите текст"
+
+[node name="SendButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=977243658]
+layout_mode = 2
+text = "Send"
