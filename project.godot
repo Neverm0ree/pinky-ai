@@ -10,6 +10,8 @@ config_version=5
 
 [application]
 
+config/version="1.0.0"
+
 config/name="AI_Companion"
 run/main_scene="uid://dt33g0hykgoox"
 config/features=PackedStringArray("4.7", "Mobile")
