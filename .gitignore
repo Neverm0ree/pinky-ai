@@ -30,3 +30,5 @@ avatar_*.png.import
 *.glb.import
 *.gltf
 *.gltf.import
+addons/nobodywho/*.pdb
+sbv2/
