@@ -245,6 +245,8 @@ func _update_glass_shader_params() -> void:
 
 # Включает или выключает аппаратное размытие фона окна на уровне композитора Linux (KDE KWin / Hyprland)
 func _set_linux_compositor_blur(enable: bool) -> void:
+	if OS.get_name() != "Linux":
+		return
 	var pid: int = OS.get_process_id()
 	var cmd: String = ""
 	if enable:
