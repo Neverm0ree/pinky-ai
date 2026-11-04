@@ -17,3 +17,16 @@ addons/nobodywho/*.so
 *.bin
 *.wav
 *.tmp
+
+# Все файлы 3D-аватаров и их текстуры
+avatars/
+avatar.glb
+avatar.glb.import
+avatar_*.png
+avatar_*.png.import
+*.vrm
+*.vrm.import
+*.glb
+*.glb.import
+*.gltf
+*.gltf.import
